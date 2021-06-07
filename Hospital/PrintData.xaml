@@ -1,0 +1,109 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              ColumnWidth="400" FontSize="14" FontFamily="宋体"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" TextOptions.TextFormattingMode="Display">
+    <FlowDocument.Resources>
+        <Style TargetType="Table" x:Key="BorderedTable">
+            <Setter Property="CellSpacing" Value="0"></Setter>
+            <Setter Property="BorderThickness" Value="1"></Setter>
+            <Setter Property="BorderBrush" Value="#000"></Setter>
+        </Style>
+        <Style TargetType="TableCell" x:Key="BorderedCell">
+            <Setter Property="BorderThickness" Value="0.5"></Setter>
+            <Setter Property="BorderBrush" Value="#000"></Setter>
+            <Setter Property="Padding" Value="3"></Setter>
+        </Style>
+    </FlowDocument.Resources>
+    <Table FontSize="16">
+        <Table.Columns>
+            <TableColumn Width="880"></TableColumn>
+
+        </Table.Columns>
+        <TableRowGroup>
+            <TableRow>
+                <TableCell>
+                    <Paragraph>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Image Source="/Hospital;component/Resources/医院.png" Height="40"></Image>
+                            <Label x:Name="Title_Label"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="20" Width="750"  Content="{Binding Title}"/>
+                        </StackPanel>
+                        <Rectangle  HorizontalAlignment="Stretch"  Width="880" VerticalAlignment="Center" Fill="Black" Height="3"/>
+
+                    </Paragraph>
+                </TableCell>
+
+            </TableRow>
+            <TableRow>
+
+                <TableCell>
+                    <Paragraph>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                            <Label  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15" Width="80" Content="姓 名:"/>
+                            <Label  x:Name="userName_La"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15" Width="120" Content="{Binding UserName}"  />
+                            <Label   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15" Width="80" Content="性 别:"/>
+                            <Label  x:Name="sex_La"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15" Width="80" Content="{Binding Sex}" />
+                            <Label    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15" Width="80" Content="年 龄:"/>
+                            <Label  x:Name="age_La"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15" Width="80" Content="{Binding Age}" />
+                            <Label   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15" Width="80" Content="电 话:"/>
+                            <Label  x:Name="Phone_La"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15" Width="120" Content="{Binding Phone}" />
+                        </StackPanel>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+
+                <TableCell>
+                    <Paragraph>
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15" Width="80" Content="内镜号:"/>
+                            <Label Margin="-10,0,0,0" x:Name="Nei_La"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15" Width="120"  Content="{Binding Nei}"/>
+
+                            <Label    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15" Width="80" Content="住院号:"/>
+                            <Label Margin="-10,0,0,0"  x:Name="Hos_LA" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15" Width="120"  Content="{Binding Hos}"/>
+                            <Label   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15" Width="80" Content="送检科室:"/>
+                            <Label Margin="-10,0,0,0" x:Name="CategyName_La"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15" Width="120"  Content="{Binding Categy}"/>
+                        </StackPanel>
+
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+
+                <TableCell>
+                    <Paragraph>
+                        <StackPanel Grid.Row="3"  VerticalAlignment="Center" HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                                <Label  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15" Width="80" Content="联系地址:"/>
+                                <Label  x:Name="AddressLabel"   HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15" Width="300" Content="{Binding Address}"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <Rectangle  HorizontalAlignment="Stretch"  Width="880" VerticalAlignment="Center" Fill="Black" Height="3"/>
+
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+
+        </TableRowGroup>
+    </Table>
+    <Paragraph >
+        <ListBox Grid.IsSharedSizeScope="True"  Width="860"  Height="350" Grid.Row="0"   Name="DaoPricture" ItemTemplate="{StaticResource ItemTemplateView}"
+               >
+            <ListBox.ItemsPanel >
+                <ItemsPanelTemplate >
+                    <WrapPanel   >
+
+                    </WrapPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+
+
+    </Paragraph>
+
+
+    <Paragraph FontSize="16">
+        <Run>总共费用（包括运费）：</Run>
+        <Run Text="{Binding TotalPrice, Mode=OneWay}"></Run>
+    </Paragraph>
+</FlowDocument>

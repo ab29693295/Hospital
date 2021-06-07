@@ -1,0 +1,74 @@
+﻿<Window x:Class="Hospital.RecordManageVideo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+        WindowStyle="None" AllowDrop="True" ResizeMode="NoResize"   BorderThickness="0" Background="#414b57" Height="400" Width="620">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label x:Name="titleLabel" Margin="0,0,0,0"  Foreground="#dddddd" FontSize="15" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30" HorizontalContentAlignment="Left" HorizontalAlignment="Left"  Width="200">录像管理</Label>
+            <Button  Click="CloseButton_Click"  Template="{StaticResource CloseBtn}" Margin="385,0,0,0" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Background="#333b46" Width="620" HorizontalAlignment="Center" Margin="10,0,10,21">
+            <Grid HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel  x:Name="SecondModel" Grid.Row="0"   VerticalAlignment="Center" HorizontalAlignment="Center" Height="360">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                          
+                            <RowDefinition Height="280"></RowDefinition>
+                            <RowDefinition Height="15"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                      
+                        <StackPanel Grid.Row="0">
+                            <DataGrid Name="RecordDG" Height="280" BorderThickness="1"  Style="{DynamicResource HosGrid}"  HeadersVisibility="Column" Width="600" Background="#414b55" VerticalAlignment="Top"
+                  CanUserSortColumns="False"   
+                  CanUserResizeColumns="False" CanUserResizeRows="False"  SelectionMode="Single"
+                  CanUserReorderColumns="False" AlternationCount="2" CellStyle="{DynamicResource HosDataGridCell}" ColumnHeaderStyle="{DynamicResource HosGridColumnHeader}" RowStyle="{DynamicResource HosDataGridRow}"  RowHeaderWidth="0" CanUserAddRows="False" AutoGenerateColumns="False" Margin="0,0,0,-0.4" >
+                                <DataGrid.Columns >
+                                    <DataGridCheckBoxColumn Binding="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"   IsReadOnly="False"     CanUserSort="False"   Width="60"/>
+                                    <DataGridTextColumn Binding="{Binding name}"   CanUserSort="False"  FontSize="15" Header="视频名称" IsReadOnly="True" Width ="*" />
+                                    <DataGridTextColumn Binding="{Binding duration}"   CanUserSort="False"  FontSize="15" Header="视频时长" IsReadOnly="True" Width ="150"/>
+                                  
+                                    <DataGridTemplateColumn Header="操作" Width="240">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button x:Name="BtnAction" Tag="{Binding ID}" Click="BtnAction_Click_1"   Content="点击查看" Background="#414b55" Foreground="#3a99f2"  Width="120" BorderThickness="0"  
+                                    FontSize="15"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                                    </Button>
+                                                    <Button x:Name="BtnRepaier" Tag="{Binding ID}" Click="BtnRepaier_Click"   Content="修复视频" Background="#414b55" Foreground="#3a99f2"  Width="120" BorderThickness="0"  
+                                    FontSize="15"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                                    </Button>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+
+                            </DataGrid>
+
+                        </StackPanel>
+                        <StackPanel Grid.Row="2" Orientation="Horizontal"  HorizontalAlignment="Center" >
+
+                            <Button x:Name="openVideo" Click="OpenVideo_Click"   Style="{StaticResource GreenButton}"  Height="30" FontSize="16" VerticalAlignment="Top" > 打开</Button>
+                            <Button  Click="BtnAction_Click"  Margin="15,0,0,0"  Style="{StaticResource WhiteButton}"  Height="30" FontSize="16" >删除</Button>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+
+               
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

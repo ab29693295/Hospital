@@ -1,0 +1,189 @@
+﻿<Window x:Class="Hospital.Seting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+        WindowStyle="None" AllowDrop="True" ResizeMode="NoResize" MouseLeftButtonDown="Window_MouseLeftButtonDown"   BorderThickness="0" Background="#414b57" Height="500" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label x:Name="titleLabel" Margin="0,0,0,0"  Foreground="#FFF"  FontSize="18" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30" HorizontalContentAlignment="Left" HorizontalAlignment="Left"  Width="200">视频设置</Label>
+            <Button  Click="ButtonClose_Click"  Template="{StaticResource CloseBtn}" Margin="460,0,0,0" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Background="#333b46" Width="650" HorizontalAlignment="Center" Margin="10,0,10,21">
+            <Grid HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="650"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel  x:Name="SecondModel" Grid.Row="0"   VerticalAlignment="Center" HorizontalAlignment="Center" Height="650">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                           
+                            <RowDefinition Height="500" />
+                            <RowDefinition Height="40" />
+                        </Grid.RowDefinitions>
+                       
+                        <StackPanel     VerticalAlignment="Center"      Height="500"   Grid.Row="0"   >
+                            <Grid>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="5"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="5"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="5"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <StackPanel Grid.Row="1"   Orientation="Horizontal" VerticalAlignment="Center"  Margin="0,0,0,0"  >
+                                    <Label Margin="0,0,0,0" Style="{StaticResource LabelStyle}"  Content="采集卡类型"/>
+                                    <ComboBox  x:Name="XCameraList" DisplayMemberPath="Value" SelectedValuePath="Value"   FontFamily="FZLTZHUNHK" FontSize="14" Foreground="#FFF" Width="180" Height="30" BorderBrush="#FF565656" VerticalContentAlignment="Center" 
+              Padding="10,0,0,0" IsEditable="False" Style="{DynamicResource ComboBoxStyle}" Margin="10,0,0,0" SelectedIndex="0" SelectionChanged="XCameraList_SelectionChanged">
+                                      
+                                    </ComboBox>
+
+                                    <Label  Style="{StaticResource LabelStyle}" Content="音频输入"/>
+                                    <ComboBox  x:Name="Audio_Com" SelectedValuePath="Content" FontFamily="FZLTZHUNHK" FontSize="14" Foreground="#FFF" Width="180" Height="30" BorderBrush="#FF565656" VerticalContentAlignment="Center" 
+              Padding="10,0,0,0" IsEditable="False" Style="{DynamicResource ComboBoxStyle}" Margin="10,0,0,0" SelectedIndex="0">
+                                        <ComboBoxItem Content="EMBEDDED AUDIO" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="LINE-IN" Padding="10,0,0,0"/>
+                                    </ComboBox>
+                                </StackPanel>
+                                <StackPanel Grid.Row="3"   Orientation="Horizontal" VerticalAlignment="Center"  Margin="0,0,0,0"  >
+                                    <Label  Style="{StaticResource LabelStyle}" Content="主视频输入"/>
+                                    <ComboBox x:Name="Video_Com"  SelectedValuePath="Content" FontFamily="FZLTZHUNHK" FontSize="14" Foreground="#FFF" Width="180" Height="30" BorderBrush="#FF565656" VerticalContentAlignment="Center" 
+              Padding="10,0,0,0" IsEditable="False" Style="{DynamicResource ComboBoxStyle}" SelectionChanged="Video_Com_SelectionChanged" Margin="10,0,0,0" SelectedIndex="4" >
+                                        <ComboBoxItem Content="HDMI" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="DVI-D" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="COMPONENTS ( YCBCR )" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="DVI-A ( RGB )" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="SDI" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="COMPOSITE" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="S-VIDEO" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="AUTO" Padding="10,0,0,0"/>
+                                    </ComboBox>
+
+                                    <Label Margin="0,0,0,0" Style="{StaticResource LabelStyle}" Content="副视频输入"/>
+                                    <ComboBox x:Name="Video_SecondCom"  SelectedValuePath="Content" FontFamily="FZLTZHUNHK" FontSize="14" Foreground="#FFF" Width="180" Height="30" BorderBrush="#FF565656" VerticalContentAlignment="Center" 
+              Padding="10,0,0,0" IsEditable="False" Style="{DynamicResource ComboBoxStyle}" SelectionChanged="Video_SecondCom_SelectionChanged"  Margin="10,0,0,0" SelectedIndex="4" >
+                                        <ComboBoxItem Content="HDMI" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="DVI-D" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="COMPONENTS ( YCBCR )" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="DVI-A ( RGB )" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="SDI" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="COMPOSITE" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="S-VIDEO" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="AUTO" Padding="10,0,0,0"/>
+                                    </ComboBox>
+                                </StackPanel>
+                                <StackPanel Grid.Row="5"   Orientation="Horizontal"  >
+                                   <Label  Style="{StaticResource LabelStyle}" Content="视频类型"/>
+                                    <ComboBox  SelectedValuePath="Content" x:Name="Video_type" FontFamily="FZLTZHUNHK" FontSize="14" Foreground="#FFF" Width="180" Height="30" BorderBrush="#FF565656" VerticalContentAlignment="Center" 
+              Padding="10,0,0,0" IsEditable="False" Style="{DynamicResource ComboBoxStyle}" Margin="10,0,0,0" SelectedIndex="0" >
+                                       
+                                        <ComboBoxItem Content="MP4" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="AVI" Padding="10,0,0,0"/>
+                                    </ComboBox>
+                                    <Label Margin="0,0,0,0"  Style="{StaticResource LabelStyle}" Content="图片类型"/>
+                                    <ComboBox x:Name="Image_com" SelectedValuePath="Content"   FontFamily="FZLTZHUNHK" FontSize="14" Foreground="#FFF" Width="180" Height="30" BorderBrush="#FF565656" VerticalContentAlignment="Center" 
+              Padding="10,0,0,0" IsEditable="False" Style="{DynamicResource ComboBoxStyle}" Margin="10,0,0,0" SelectedIndex="0">
+                                        <ComboBoxItem Content="JPG" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="BMP" Padding="10,0,0,0"/>
+                                    </ComboBox>
+
+                                </StackPanel>
+                                <StackPanel Grid.Row="7"    Orientation="Horizontal"  Margin="0,0,0,10" Grid.RowSpan="2" >
+                                 
+
+                                    <Label Margin="0,0,0,0"  Style="{StaticResource LabelStyle}" Content="分辨率"/>
+                                    <ComboBox x:Name="Fen_com"  SelectedValuePath="Content"  FontFamily="FZLTZHUNHK" FontSize="14" Foreground="#FFF" Width="180" Height="30" BorderBrush="#FF565656" VerticalContentAlignment="Center" 
+              Padding="10,0,0,0" IsEditable="False" Style="{DynamicResource ComboBoxStyle}" SelectionChanged="Fen_com_SelectionChanged_1" Margin="10,0,0,0" SelectedIndex="0">
+                                        <ComboBoxItem Content="1920x1080" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="1280x720" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="960x540" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="720x480" Padding="10,0,0,0"/>
+                                    </ComboBox>
+                                    <Label Margin="0,0,0,0"  Style="{StaticResource LabelStyle}" Content="码率"/>
+                                    <ComboBox x:Name="Malv_com"  SelectedValuePath="Content"  FontFamily="FZLTZHUNHK" FontSize="14" Foreground="#FFF" Width="180" Height="30" BorderBrush="#FF565656" VerticalContentAlignment="Center" 
+              Padding="10,0,0,0" IsEditable="False" Style="{DynamicResource ComboBoxStyle}" SelectionChanged="Malv_com_SelectionChanged"  Margin="10,0,0,0" SelectedIndex="0">
+                                        <ComboBoxItem Content="5" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="10" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="15" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="20" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="25" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="30" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="35" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="40" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="45" Padding="10,0,0,0"/>
+                                        <ComboBoxItem Content="50" Padding="10,0,0,0"/>
+                                        
+                                       
+                                    </ComboBox>
+
+
+                                </StackPanel>
+                                <StackPanel Grid.Row="9"   Orientation="Horizontal"  Margin="0,0.4,0,0.2" >
+                                    <Label Margin="0,0,0,0"  Style="{StaticResource LabelStyle}" Content="自动分段"/>
+                                    <CheckBox x:Name="FileCheck" Click="FileCheck_Click"   Margin="10,0,0,0"  Content="文件大小" FontSize="14" Foreground="#FFF"   VerticalAlignment="Center"></CheckBox>
+                                    <TextBox x:Name="FileSize_Txt" Width="90"  PreviewTextInput="FileSize_Txt_PreviewTextInput"  Style="{StaticResource txtTest}"  Height="30">
+
+                                    </TextBox>
+                                    <Label  Style="{StaticResource LabelStyle}" HorizontalContentAlignment="Left" Width="35" Content="(M)"/>
+                                    <CheckBox x:Name="Time" Click="Time_Click" Margin="10,0,0,0"  Content="时间" FontSize="14" Foreground="#FFF"   VerticalAlignment="Center"></CheckBox>
+                                    <TextBox x:Name="Time_Text"  Width="90" PreviewTextInput="FileSize_Txt_PreviewTextInput"  Style="{StaticResource txtTest}" >
+
+                                    </TextBox>
+                                    <Label  Style="{StaticResource LabelStyle}" HorizontalContentAlignment="Left" Width="55" Content="（分）"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="13"   Orientation="Horizontal"  Margin="0,0.4,0,0.2" >
+                                    <Label Margin="0,0,0,0"  Width="140" Style="{StaticResource LabelStyle}" Content="*文件存储位置"/>
+
+                                    <TextBox x:Name="FolderPath" Height="30" Style="{StaticResource txtTest}" Width="240" >
+
+                                    </TextBox>
+                                    <Button Style="{StaticResource DefaultButton}" Margin="10,0,0,0" Height="30" Click="Button_Click">浏览</Button>
+                                </StackPanel>
+                                <StackPanel Grid.Row="15"   Orientation="Horizontal"  Margin="0,0.4,0,0.2" >
+                                    <Label Margin="0,0,0,0"  Style="{StaticResource LabelStyle}" Content="串口设置"/>
+                                    <CheckBox Margin="10,0,0,0"  Content="启用" FontSize="14" Foreground="#FFF"   VerticalAlignment="Center"></CheckBox>
+                                    <ComboBox  FontFamily="FZLTZHUNHK" FontSize="14" Foreground="#FFF" Width="140" Height="30" BorderBrush="#FF565656" VerticalContentAlignment="Center" 
+              Padding="10,0,0,0" IsEditable="False" Style="{DynamicResource ComboBoxStyle}" Margin="10,0,0,0" SelectedIndex="0">
+                                        <ComboBoxItem Content="" Padding="10,0,0,0"/>                                      
+                                    </ComboBox>
+                                </StackPanel>
+                                <StackPanel Grid.Row="18" Orientation="Horizontal"  HorizontalAlignment="Center" >
+
+                                    <Button  x:Name="btnSave"  Click="BtnSave_Click"  Style="{StaticResource GreenButton}"  Height="30" FontSize="16" >保存</Button>
+                                    <Button  x:Name="btnCancel" Click="BtnCancel_Click"  Margin="15,0,0,0"  Style="{StaticResource WhiteButton}"  Height="30" FontSize="16" >关闭</Button>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+
+                    </Grid>
+
+                </StackPanel>
+
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,31 @@
+﻿<Window x:Class="Hospital.Control"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+        AllowsTransparency="True" WindowStyle="None" Opacity="0.01"   AllowDrop="True" ResizeMode="NoResize"    MouseEnter="Window_MouseEnter" MouseLeave="Window_MouseLeave"   BorderThickness="0" Height="90" Width="1540" >
+
+
+
+        <Grid VerticalAlignment="Center"   MouseEnter="Window_MouseEnter" Background="#414b57" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90" />
+               
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0"  MouseEnter="Window_MouseEnter" HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button x:Name="playBtn" Click="PlayBtn_Click"  Width="90" Height="90" Template="{StaticResource FullStartRecord}"  />
+                <Button x:Name="stopBtn"  Width="90" Height="90" Template="{StaticResource FullPauseRecord}" Click="StopBtn_Click" Margin="25,0,0,0"  />
+                <Button x:Name="CameraBtn"  Width="90" Height="90"  Template="{StaticResource FullCameraBtn}" Click="CameraBtn_Click" Margin="25,0,0,-0.2"  VerticalAlignment="Top" />
+                <Button x:Name="turnBtn"  Width="90" Height="90"  Template="{StaticResource FullTurnBtn}" Click="TurnBtn_Click" Margin="25,0,0,0" />
+                <Button x:Name="ChangeVideoBtn" Click="ChangeVideoBtn_Click"   Width="90" Height="90"  Template="{StaticResource FullVideoBtn}" Margin="25,0,0,0" />
+
+                <Button x:Name="forwardBtn"  Width="90" Height="90"  Template="{StaticResource SmallScreenBtn}" Margin="50,0,0,0" RenderTransformOrigin="2.159,0.505" Click="ForwardBtn_Click"   />
+                
+                
+            </StackPanel>
+
+        </Grid>
+    
+</Window>

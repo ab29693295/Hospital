@@ -1,0 +1,18 @@
+﻿<Window x:Class="Hospital.ImageTip"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+        WindowStyle="None" AllowDrop="True" ResizeMode="NoResize"  Loaded="Window_Loaded"  BorderThickness="0" Background="#414b57" Height="40" Width="100">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+           
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label FontSize="20"  Foreground="#d8d9da"  Margin="0,0,0,0.4" Width="99" Name="Label_Txt" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+        </StackPanel>
+    </Grid>
+</Window>

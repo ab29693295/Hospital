@@ -1,0 +1,47 @@
+﻿<Window x:Class="Hospital.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+         WindowStyle="None" AllowDrop="True" ResizeMode="NoResize"   BorderThickness="0" Background="#414b57" Height="300" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label x:Name="titleLabel" Margin="0,0,0,0.4" HorizontalContentAlignment="Center"  Foreground="#dddddd"  FontSize="15" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"   Width="417">登录</Label>
+            <Button  Click="CloseButton_Click"  Template="{StaticResource CloseBtn}" Margin="10,0,0,0" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Background="#333b46" Width="450" HorizontalAlignment="Center" Margin="10,0,10,21">
+            <Grid HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="1" Orientation="Horizontal"  HorizontalAlignment="Center" >
+                    <Label  Style="{StaticResource OPLabelStyle}" FontSize="16" Width="70" Content="用户名："/>
+                    <TextBox x:Name="UserName_Txt"  Style="{StaticResource OPtxtTest}" Margin="10,0,0,0" Width="140" Height="30">
+
+                    </TextBox>
+
+                </StackPanel>
+                <StackPanel Grid.Row="2" Orientation="Horizontal"  HorizontalAlignment="Center" >
+                    <Label  Style="{StaticResource OPLabelStyle}" FontSize="16" Width="70" Content="密    码："/>
+                    <TextBox x:Name="Pwd_Txt" Foreground="#424e5b" FontFamily="Courier New"     Style="{StaticResource OPtxtTest}" Margin="10,0,0,0" Width="140" Height="30">
+
+                    </TextBox>
+
+                </StackPanel>
+                <StackPanel Grid.Row="3" Orientation="Horizontal"  HorizontalAlignment="Center" >
+                    <Button Click="Button_Click"   Style="{StaticResource GreenButton}"  Height="30" FontSize="16" >登录</Button>
+                </StackPanel>
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

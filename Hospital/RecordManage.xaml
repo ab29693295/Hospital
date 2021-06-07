@@ -1,0 +1,190 @@
+﻿<Window x:Class="Hospital.RecordManage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+        WindowStyle="None" AllowDrop="True" ResizeMode="NoResize"  MouseLeftButtonDown="Window_MouseLeftButtonDown"  BorderThickness="0" Background="#414b57" Height="520" Width="850">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label  Margin="0,0,0,0"  Foreground="#dddddd" FontSize="15" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30" HorizontalContentAlignment="Center" HorizontalAlignment="Left"  Width="88">病例管理</Label>
+            <Button  Click="CloseButton_Click"  Template="{StaticResource CloseBtn}" Margin="720,0,0,0" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Background="#333b46" Width="820" HorizontalAlignment="Center" Margin="10,0,10,21">
+            <Grid HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="400"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel  x:Name="SecondModel" Grid.Row="0"   VerticalAlignment="Center" HorizontalAlignment="Center" Height="360">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="10"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="10"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="10"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                            <Label  Style="{StaticResource OPLabelStyle}" FontSize="15" Width="70" Content="医生姓名"/>
+                            <!--<TextBox x:Name="Doc_txt" Style="{StaticResource OPtxtTest}" Margin="10,0,0,0" Width="120" Height="25">
+
+                            </TextBox>-->
+                            <ComboBox x:Name="Doc_txt" SelectedValuePath="Content"  FontFamily="FZLTZHUNHK" FontSize="15" Foreground="#FFF" Width="140" Height="35" BorderBrush="#FF565656" VerticalContentAlignment="Center" 
+              Padding="10,0,0,0" IsEditable="True" Style="{DynamicResource ComboBoxStyleEdit}" Margin="10,0,0,0"  >
+                            </ComboBox>
+                            <Label  Style="{StaticResource OPLabelStyle}" FontSize="15" Width="70" Content="患者姓名"/>
+                            <TextBox x:Name="painet_Txt" Style="{StaticResource OPtxtTest}" Margin="10,0,0,0" Width="120" Height="25">
+
+                            </TextBox>
+                            <Label  Style="{StaticResource OPLabelStyle}" FontSize="15" Width="70" Content="手术名称"/>
+
+                            <!--<TextBox x:Name="operation_Com" Style="{StaticResource OPtxtTest}" Margin="10,3,0,2.4" Width="200" Height="25">
+
+                            </TextBox>-->
+                            <ComboBox x:Name="operation_Com" SelectedValuePath="Content"  FontFamily="FZLTZHUNHK" FontSize="15" Foreground="#FFF" Width="200" Height="35" BorderBrush="#FF565656" VerticalContentAlignment="Center" 
+              Padding="10,0,0,0" IsEditable="True" Style="{DynamicResource ComboBoxStyleEdit}" Margin="10,0,0,0" >
+
+
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Grid.Row="3" Orientation="Horizontal">
+                            <Label  Style="{StaticResource OPLabelStyle}"  FontSize="15" Width="90" Content="性别"/>
+                            <ComboBox x:Name="Sex_Com" SelectedValuePath="Content"  FontFamily="FZLTZHUNHK" FontSize="15" Foreground="#FFF" Width="80" Height="25" BorderBrush="#FF565656" VerticalContentAlignment="Center" 
+              Padding="20,0,0,0" IsEditable="False" Style="{DynamicResource ComboBoxStyle}" Margin="10,0,0,0" SelectedIndex="0">
+                                <ComboBoxItem Content="" Padding="20,0,0,0"/>
+                                <ComboBoxItem Content="男" Padding="20,0,0,0"/>
+                                <ComboBoxItem Content="女" Padding="20,0,0,0"/>
+
+                            </ComboBox>
+                            <Label  Style="{StaticResource OPLabelStyle}" Margin="20,0,0,0" FontSize="15" Width="70" Content="年龄范围"/>
+                            <TextBox  x:Name="MinAge" Style="{StaticResource OPtxtTest}" Margin="10,0,0,0"  Width="60" Height="25">
+
+                            </TextBox>
+                            <Label  Style="{StaticResource OPLabelStyle}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" Width="20" Content="~" Margin="0,2,0,2.4"/>
+                            <TextBox  x:Name="MaxAge"  Margin="-1,0,0,0" Style="{StaticResource OPtxtTest}"  Width="60" Height="25">
+
+                            </TextBox>
+                            <Label  Style="{StaticResource OPLabelStyle}" FontSize="15" Width="70" Content="住院号"/>
+                            <TextBox x:Name="hosNum_Txt" Style="{StaticResource OPtxtTest}" Margin="10,0,0,0" Width="200" Height="25">
+
+                            </TextBox>
+                        </StackPanel>
+                        <StackPanel Grid.Row="5" Orientation="Horizontal">
+                            <Label  Style="{StaticResource OPLabelStyle}" Margin="20,0,0,0" FontSize="15" Width="70" Content="日期范围"/>
+                            <DatePicker  BorderThickness="0"  VerticalContentAlignment="Center" x:Name="StartDate"    Width="140" Height="25" Background="#424e5b" >
+                                <DatePicker.Resources>
+                                    <Style TargetType="DatePickerTextBox">
+                                        <Setter Property="IsReadOnly" Value="True"/>
+                                    </Style>
+                                </DatePicker.Resources>
+                            </DatePicker>
+                            <Label  Style="{StaticResource OPLabelStyle}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" Width="20" Content="~" Margin="0,2,0,2.4"/>
+                            <DatePicker BorderThickness="0" VerticalContentAlignment="Center" x:Name="EndDate"   Width="140" Height="25" Background="#424e5b" >
+                                <DatePicker.Resources>
+                                    <Style TargetType="DatePickerTextBox">
+                                        <Setter Property="IsReadOnly" Value="True"/>
+                                    </Style>
+                                </DatePicker.Resources>
+                            </DatePicker>
+                            <Button  x:Name="BtnSearch"  Click="BtnSearch_Click"  Margin="115,0,0,0"  Style="{StaticResource GreenButton}"   FontSize="15"  Height="25" Width="80" RenderTransformOrigin="0.5,0.504"  >查询</Button>
+                            <Button   x:Name="BtnLoad" Click="BtnLoad_Click"   Margin="15,0,0,0"  Style="{StaticResource WhiteButton}"   FontSize="15"  Height="25" Width="80"  >导出</Button>
+                        </StackPanel>
+                        <StackPanel Grid.Row="7">
+                            <DataGrid Name="RecordDG" BorderThickness="1" Height="280"  Style="{DynamicResource HosGrid}"  HeadersVisibility="Column" Width="800" Background="#414b55" VerticalAlignment="Top"
+                  CanUserSortColumns="False"   
+                  CanUserResizeColumns="False" CanUserResizeRows="False"  SelectionMode="Single"
+                  CanUserReorderColumns="False" AlternationCount="2" CellStyle="{DynamicResource HosDataGridCell}" ColumnHeaderStyle="{DynamicResource HosGridColumnHeader}" RowStyle="{DynamicResource HosDataGridRow}"  RowHeaderWidth="0" CanUserAddRows="False" AutoGenerateColumns="False" Margin="0,0,0,-0.4" >
+                                <DataGrid.Columns >
+                                    <DataGridTemplateColumn Width="60">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <CheckBox Name="cbbSelALL" HorizontalAlignment="Center"    Unchecked="CheckBox_Unchecked" Checked="CheckBox_Checked" Tag="{Binding ID}"  />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn Binding="{Binding surgeon}"   CanUserSort="False"  FontSize="15" Header="医生姓名" IsReadOnly="True" Width ="80" />
+                                    <DataGridTemplateColumn Header="患者姓名" Width="*">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button x:Name="BtnOpenName" Tag="{Binding surgeon}" Click="BtnOpenName_Click"  Content="{Binding username}" Background="#414b55" Foreground="#3a99f2"  Width="80" BorderThickness="0"  
+                                    FontSize="15"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                                    </Button>
+
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn Binding="{Binding sex}"  CanUserSort="False"  FontSize="15" Header="性别" IsReadOnly="True" Width ="50"/>
+                                    <DataGridTextColumn Binding="{Binding age}"   CanUserSort="False"  FontSize="15" Header="年龄" IsReadOnly="True" Width ="50"/>
+                                    <DataGridTextColumn Binding="{Binding operaName}"  CanUserSort="False"  FontSize="15" Header="手术名称" IsReadOnly="True" Width ="80"/>
+                                    <DataGridTextColumn Binding="{Binding hospNumber}"   CanUserSort="False"  FontSize="15" Header="住院号" IsReadOnly="True" Width ="100"/>
+                                    <DataGridTextColumn Binding="{Binding CreateDate}"   CanUserSort="False"  FontSize="15" Header="住院日期" IsReadOnly="True" Width ="100"/>
+                                    <DataGridTemplateColumn Header="视频文件" Width="*">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button x:Name="BtnVideo" Tag="{Binding ID}" Click="BtnVideo_Click"  Content="{Binding VideoCount}" Background="#414b55" Foreground="#3a99f2"  Width="40" BorderThickness="0"  
+                                    FontSize="15"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                                    </Button>
+
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="图片文件" Width="*">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button x:Name="BtnImage" Tag="{Binding ID}" Click="BtnImage_Click" Content="{Binding ImageCount}" Background="#414b55" Foreground="#3a99f2"  Width="40" BorderThickness="0"  
+                                    FontSize="15"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                                    </Button>
+
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="操作" Width="80">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button x:Name="BtnAction" Tag="{Binding ID}" Click="BtnAction_Click"  Content="删除" Background="#414b55" Foreground="#3a99f2"  Width="40" BorderThickness="0"  
+                                    FontSize="15"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                                    </Button>
+
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+
+                            </DataGrid>
+
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Orientation="Horizontal"  HorizontalAlignment="Center" >
+                    <Button x:Name="First" Click="First_Click"  Style="{StaticResource OPButtonStyle}"  Cursor="Hand"  Margin="11,0,0,0" FontSize="15" Width="55" Content="首页"/>
+                    <Button x:Name="Pre"  Click="Pre_Click" Style="{StaticResource OPButtonStyle}" Margin="11,0,0,0" FontSize="15" Width="55" Content="上一页"/>
+                    <Button  x:Name="Next" Click="Next_Click" Style="{StaticResource OPButtonStyle}" Margin="11,0,0,0.2" FontSize="15" Width="55" Content="下一页" VerticalAlignment="Bottom"/>
+                    <Button x:Name="Last"  Click="Last_Click" Style="{StaticResource OPButtonStyle}" Margin="11,0,0,0" FontSize="15" Width="55" Content="尾页"/>
+                    <Button x:Name="Total" IsEnabled="True"   Style="{StaticResource OPButtonStyle}" Margin="11,0,0,0" FontSize="15" Width="70" Content="共100页"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

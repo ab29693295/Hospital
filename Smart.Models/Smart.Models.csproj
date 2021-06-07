@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{94E741D8-D4C1-4C77-8254-EFF626E99831}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Smart.Models</RootNamespace>
+    <AssemblyName>Smart.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Edu.Tools">
+      <HintPath>C:\com\Edu.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:\com\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commity\CommityModel.cs" />
+    <Compile Include="Commity\OrderModel.cs" />
+    <Compile Include="Enums\Course.cs" />
+    <Compile Include="Enums\EnumState.cs" />
+    <Compile Include="Enums\UserInfo.cs" />
+    <Compile Include="Enums\YesNo.cs" />
+    <Compile Include="Models\DiscussGroup.cs" />
+    <Compile Include="Models\EmailCs.cs" />
+    <Compile Include="Models\FlvInfo.cs" />
+    <Compile Include="Models\JSONHelper.cs" />
+    <Compile Include="Models\LoginLog.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\MetaName.cs" />
+    <Compile Include="Models\MFileInfo.cs" />
+    <Compile Include="Models\PaientModel.cs" />
+    <Compile Include="Models\RecordVideo.cs" />
+    <Compile Include="Models\ResultLive.cs" />
+    <Compile Include="Models\Sms.cs" />
+    <Compile Include="Models\zNode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Smart\AddressModel.cs" />
+    <Compile Include="Smart\CollageModel.cs" />
+    <Compile Include="Smart\CollageUserModel.cs" />
+    <Compile Include="Smart\CommdityModel.cs" />
+    <Compile Include="Smart\CommType.cs" />
+    <Compile Include="Smart\DiscussModel.cs" />
+    <Compile Include="Smart\UserModel.cs" />
+    <Compile Include="WX\AccessToken.cs" />
+    <Compile Include="WX\CodeToken.cs" />
+    <Compile Include="WX\Token.cs" />
+    <Compile Include="WX\UserJson .cs" />
+    <Compile Include="WX\WeiXinAPIUser.cs" />
+    <Compile Include="WX\WxPayData.cs" />
+    <Compile Include="WX\WxPayOrderData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Smart.Entity\Smart.Entity.csproj">
+      <Project>{A49D9120-16B7-4E8F-A106-8EF6B8C11F36}</Project>
+      <Name>Smart.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

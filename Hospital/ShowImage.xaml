@@ -1,0 +1,24 @@
+﻿<Window x:Class="Hospital.ShowImage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+        WindowStyle="None" AllowDrop="True" ResizeMode="NoResize" Loaded="Window_Loaded" MouseLeftButtonDown="Window_MouseLeftButtonDown"   BorderThickness="0" Background="#414b57" Height="550" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal"  HorizontalAlignment="Left">
+            <Label x:Name="titleLabel" Margin="0,0,0,0"  Foreground="#FFF"  FontSize="18" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30" HorizontalContentAlignment="Left" HorizontalAlignment="Left"  Width="655">图片展示</Label>
+            <Button  Click="Button_Click"  Template="{StaticResource MaxBtn}"  />
+            <Button  Click="ButtonClose_Click"  Template="{StaticResource CloseBtn}"  />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image x:Name="MainImage"   Width="650" Height="450"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,66 @@
+﻿<Window x:Class="Hospital.CompanyTip"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+        WindowStyle="None" AllowDrop="True" ResizeMode="NoResize"  Loaded="Window_Loaded"  BorderThickness="0" Background="#414b57" Height="600" Width="620">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label x:Name="titleLabel" Margin="0,0,0,0.4" HorizontalContentAlignment="Center"  Foreground="#dddddd"  FontSize="15" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="30"   Width="580"></Label>
+            <Button  Click="CloseButton_Click"  Template="{StaticResource CloseBtn}" Margin="10,0,0,0" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="110" />
+                    <RowDefinition Height="210" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.RowSpan="4"  Grid.Column="0">
+                    <Image Source="/Hospital;component/Resources/Company.png" Width="200" Height="200"></Image>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="1">
+                    <Label FontSize="30"  FontWeight="Black" Foreground="#d8d9da"  Margin="0,0,0,0.4" Width="300" Name="Label_Txt" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">HDVR影像录播软件</Label>
+                   
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="2">
+                    <Label FontSize="20"  Foreground="#d8d9da"  Margin="0,0,0,0.4" Width="300"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center">版本：V10.18601.001</Label>
+
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="3">
+                    <Label FontSize="14"  Foreground="#d8d9da"  Margin="0,10,0,0.4" Width="300"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center">2020-07</Label>
+
+                </StackPanel>
+                <StackPanel Grid.Row="4"  Grid.ColumnSpan="2">
+                    <Image Source="/Hospital;component/Resources/Weixin.png" Width="200" Height="200"></Image>
+                </StackPanel>
+                <StackPanel Grid.Row="5"  Grid.ColumnSpan="2">
+                    <Label FontSize="20"  Foreground="#d8d9da"  Margin="0,0,0,0.4" Width="300"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center">技术支持：4000-168-191</Label>
+                </StackPanel>
+                <StackPanel Grid.Row="6"  Grid.ColumnSpan="2">
+                    <Label FontSize="30"  FontWeight="Black" Foreground="#d8d9da"  Margin="0,0,0,0.4" Width="500"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center">深圳市金康桥科技有限公司</Label>
+
+                </StackPanel>
+                <StackPanel Grid.Row="7"  Grid.ColumnSpan="2">
+                    <Label FontSize="20"  Foreground="#d8d9da"  Margin="0,0,0,0.4" Width="500"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Shenzhen Jinkangqiao Technology Co., Ltd.</Label>
+                </StackPanel>
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

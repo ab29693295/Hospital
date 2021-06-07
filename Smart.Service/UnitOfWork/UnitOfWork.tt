@@ -1,0 +1,38 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ include file="EF.Utility.CS.ttinclude" #>
+<#@ assembly name="$(SolutionDir)\Smart.Data\bin\Debug\Smart.Data.dll" #>
+<#@ import namespace="Smart.Data" #>
+<#@ output extension=".cs" #>
+using Smart.Data;
+using Smart.Entity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace Smart.Service
+{
+    public partial class UnitOfWork : IDisposable
+    {
+<#
+	 foreach (var item in Utility.GetModelNames())
+    {
+			//fileManager.StartNewFile(item + "RepositoryExt.cs");
+			//BeginNamespace(namespaceName, code);#>	
+		private D<#=item#> _D<#=item#>;
+      
+        public D<#=item#> D<#=item#>
+        {
+            get
+            {
+                if (this._D<#=item#> == null)
+                {
+                    this._D<#=item#> = new D<#=item#>(context);
+                }
+                return _D<#=item#>;
+            }
+        }
+
+	<#}#>
+
+    }
+}
