@@ -418,20 +418,24 @@ namespace Hospital
         private void MinButton_Click(object sender, RoutedEventArgs e)
         {
 
-            if (_IsRecordStatus == false)
-            {
-                WindowState = WindowState.Minimized;
-            }
-            else
-            {
+            WindowState = WindowState.Minimized;
 
-                MessageTip msg = new MessageTip("录制过程中禁止最小化！")
-                {
-                    WindowStartupLocation = WindowStartupLocation.CenterScreen
-                };
-                msg.Show();
+            //录制过程中允许最小化
 
-            }
+            //if (_IsRecordStatus == false)
+            //{
+                
+            //}
+            //else
+            //{
+
+            //    MessageTip msg = new MessageTip("录制过程中禁止最小化！")
+            //    {
+            //        WindowStartupLocation = WindowStartupLocation.CenterScreen
+            //    };
+            //    msg.Show();
+
+            //}
 
 
         }
@@ -791,7 +795,7 @@ namespace Hospital
                         iT.Top = System.Windows.SystemParameters.PrimaryScreenHeight - 180;
                         iT.Topmost = true;
                         iT.Show();
-                        Thread.Sleep(5000);  //form2窗体显示10秒
+                        Thread.Sleep(1000);  //form2窗体显示1秒
 
                         iT.Close();  //form2窗体关闭
                     }
@@ -833,6 +837,8 @@ namespace Hospital
             CurrentFolderPath = XmlHelper.GetValue("Selectpath");
 
             string ciPan = CurrentFolderPath.Substring(0, 1);
+
+
 
             long Free = GetHardDiskSpace(ciPan);
             if (Free < 10)

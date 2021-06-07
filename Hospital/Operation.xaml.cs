@@ -209,9 +209,9 @@ namespace Hospital
             this.opeDoctor_Com.ItemsSource = OperaDoctors;
 
             //MessageBox.Show("新增成功！");
-            MessageTip msg = new MessageTip("保存成功！");
-            msg.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            msg.Show();
+            //MessageTip msg = new MessageTip("保存成功！");
+            //msg.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            //msg.Show();
         }
         /// <summary>
         /// 删除病例

@@ -97,7 +97,7 @@
 
                             <Button x:Name="LoadExcel" Click="LoadExcel_Click"  Margin="230,0,0,0"  Style="{StaticResource WhiteButton}"    FontSize="16"  Height="25" Width="120"  >导入EXCEL表格</Button>
                             <Button x:Name="OutLoadExcel" Click="OutLoadExcel_Click"  Margin="15,0,0,0"  Style="{StaticResource WhiteButton}"    FontSize="16"  Height="25" Width="120"  >导出XCEL表格</Button>
-                            <Button  Click="Button_Click_Add"  Margin="15,0,0,0"  Style="{StaticResource WhiteButton}"   FontSize="16"  Height="25" Width="80" RenderTransformOrigin="0.5,0.504"  >保存</Button>
+                            <Button  Click="Button_Click_Add"  Margin="15,0,0,0"  Style="{StaticResource WhiteButton}"   FontSize="16"  Height="25" Width="80" RenderTransformOrigin="0.5,0.5"  >保存</Button>
 
                         </StackPanel>
                         <StackPanel Grid.Row="7">
@@ -109,19 +109,20 @@
 
                                 <DataGrid.Columns >
 
-                                    <DataGridTemplateColumn CellStyle="{StaticResource HosDataGridCell}"    CanUserSort="False"   Header="序号" IsReadOnly="True" Width="60">
+                                    <DataGridTemplateColumn CellStyle="{StaticResource HosDataGridCell}"    CanUserSort="False"   Header="序号" IsReadOnly="True" Width="55">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGridRow}}, Path=Header}" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTextColumn Binding="{Binding username}"   CanUserSort="False"  FontSize="15" Header="病人姓名" IsReadOnly="True" Width ="80" />
-                                    <DataGridTextColumn Binding="{Binding sex}"   CanUserSort="False"  FontSize="15" Header="病人性别" IsReadOnly="True" Width ="80"/>
-                                    <DataGridTextColumn Binding="{Binding age}"  CanUserSort="False"  FontSize="15" Header="年龄" IsReadOnly="True" Width ="50"/>
-                                    <DataGridTextColumn Binding="{Binding Department}"   CanUserSort="False"  FontSize="15" Header="科别" IsReadOnly="True" Width ="80"/>
-                                    <DataGridTextColumn Binding="{Binding hospNumber}"  CanUserSort="False"  FontSize="15" Header="住院号" IsReadOnly="True" Width ="80"/>
-                                    <DataGridTextColumn Binding="{Binding operativesite}"   CanUserSort="False"  FontSize="15" Header="手术部位" IsReadOnly="True" Width ="80"/>
+                                    <DataGridTextColumn Binding="{Binding username}"   CanUserSort="False"  FontSize="15" Header="病人姓名" IsReadOnly="True" Width ="75" />
+                                    <DataGridTextColumn Binding="{Binding sex}"   CanUserSort="False"  FontSize="15" Header="病人性别" IsReadOnly="True" Width ="70"/>
+                                    <DataGridTextColumn Binding="{Binding age}"  CanUserSort="False"  FontSize="15" Header="年龄" IsReadOnly="True" Width ="55"/>
+                                    <DataGridTextColumn Binding="{Binding Department}"   CanUserSort="False"  FontSize="15" Header="科别" IsReadOnly="True" Width ="75"/>
+                                    <DataGridTextColumn Binding="{Binding hospNumber}"  CanUserSort="False"  FontSize="15" Header="住院号" IsReadOnly="True" Width ="75"/>
+                                    <DataGridTextColumn Binding="{Binding operativesite}"   CanUserSort="False"  FontSize="15" Header="手术名称" IsReadOnly="True" Width ="75"/>
+                                    <DataGridTextColumn Binding="{Binding operativesite}"   CanUserSort="False"  FontSize="15" Header="手术部位" IsReadOnly="True" Width ="75"/>
                                     <DataGridTextColumn Binding="{Binding surgeon}"   CanUserSort="False"  FontSize="15" Header="手术医生" IsReadOnly="True" Width ="*"/>
                                     <DataGridTemplateColumn Header="操作" Width="80">
                                         <DataGridTemplateColumn.CellTemplate>
