@@ -1267,6 +1267,8 @@ namespace Hospital
            
 
 
+
+
             var pRecortUser = unitOfWork.DOperationRecord.GetByID(CurrentRecordID);
             if (pRecortUser == null)
             {
@@ -1295,7 +1297,34 @@ namespace Hospital
 
             }
             oRecord = unitOfWork.DOperationRecord.GetByID(CurrentRecordID);
-            
+
+   
+
+            string textString= string.Format("病人姓名：{0},病人性别：{1},病人年龄：{2},住院号：{3},手术名称：{4},手术医生：{5},手术部位：{6}", this.patintName_Com.Text, this.painetSex_Com.Text, this.painetAge_Txt.Text, this.painetNum_Txt.Text, this.operName_Com.Text, this.operPart_Com.Text, this.opeDoctor_Com.Text);
+
+
+
+            string path = CurrentFolderPath + "\\"+ this.patintName_Com.Text + ".txt";
+
+            if (!File.Exists(path))
+            {
+                FileStream fs = new FileStream(path, FileMode.Create, FileAccess.ReadWrite);
+
+                StreamWriter sw = new StreamWriter(fs);
+                sw.Write(textString);
+                sw.Flush();
+                sw.Close();
+            }
+            else
+            {
+                FileStream fs = new FileStream(path, FileMode.Append);
+                //文本写入
+                StreamWriter sw = new StreamWriter(fs);
+                sw.Write(textString);
+                sw.Flush();
+                sw.Close();
+            }
+
             this.btnRecordStart.IsEnabled = true;//开始录像
             this.CameraShow.IsEnabled = true;//拍照
             //this.ZhiBoBtn.IsEnabled = true;//直播
@@ -1359,20 +1388,20 @@ namespace Hospital
         /// <param name="e"></param>
         public void TurnBtn_Click(object sender, RoutedEventArgs e)
         {
-            //EXPORTS.QCAP_SET_VIDEO_DEINTERLACE_TYPE(m_hCapDev, 0);
+            EXPORTS.QCAP_SET_VIDEO_MIRROR(m_hCapDev, 1,0);
             if (_IsFanzhuan)
             {
                 //EXPORTS.QCAP_SET_VIDEO_MIRROR(m_hCapDev, 1, 1);
               
-                EXPORTS.QCAP_SET_DEVICE_CUSTOM_PROPERTY(m_hCapDev, 245, 0);
-                EXPORTS.QCAP_SET_DEVICE_CUSTOM_PROPERTY(m_hCapDev, 244, 0);
+                //EXPORTS.QCAP_SET_DEVICE_CUSTOM_PROPERTY(m_hCapDev, 245, 0);
+                //EXPORTS.QCAP_SET_DEVICE_CUSTOM_PROPERTY(m_hCapDev, 244, 0);
                 _IsFanzhuan = false;
             }
             else
             {
                 // EXPORTS.QCAP_SET_VIDEO_MIRROR(m_hCapDev, 0, 0);
-                EXPORTS.QCAP_SET_DEVICE_CUSTOM_PROPERTY(m_hCapDev, 245, 1);
-                EXPORTS.QCAP_SET_DEVICE_CUSTOM_PROPERTY(m_hCapDev, 244, 1);
+                //EXPORTS.QCAP_SET_DEVICE_CUSTOM_PROPERTY(m_hCapDev, 245, 1);
+                //EXPORTS.QCAP_SET_DEVICE_CUSTOM_PROPERTY(m_hCapDev, 244, 1);
 
                 _IsFanzhuan = true;
             }
@@ -1959,11 +1988,11 @@ namespace Hospital
                 this.ChangeVideoBtn2.Template = this.FindResource("VideoSecondBtn") as ControlTemplate;
                 this.ChangeVideoBtn1.Template = this.FindResource("VideoSecondBtn") as ControlTemplate;
 
-                MessageTip msgMain = new MessageTip("当前切换为副视频源！")
-                {
-                    WindowStartupLocation = WindowStartupLocation.CenterScreen
-                };
-                msgMain.Show();
+                //MessageTip msgMain = new MessageTip("当前切换为副视频源！")
+                //{
+                //    WindowStartupLocation = WindowStartupLocation.CenterScreen
+                //};
+                //msgMain.Show();
 
                 iceNumber = 1;
 
@@ -1992,11 +2021,11 @@ namespace Hospital
 
                 }
 
-                MessageTip msgMain = new MessageTip("当前切换为主视频源！")
-                {
-                    WindowStartupLocation = WindowStartupLocation.CenterScreen
-                };
-                msgMain.Show();
+                //MessageTip msgMain = new MessageTip("当前切换为主视频源！")
+                //{
+                //    WindowStartupLocation = WindowStartupLocation.CenterScreen
+                //};
+                //msgMain.Show();
             }
 
             if (m_hCapDev != 0x00000000)

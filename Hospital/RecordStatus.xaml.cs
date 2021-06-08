@@ -48,7 +48,7 @@ namespace Hospital
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove();
+            //this.DragMove();
         }
 
         private void Window_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
