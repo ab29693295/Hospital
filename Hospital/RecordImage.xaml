@@ -37,7 +37,7 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="400"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <ListBox Grid.IsSharedSizeScope="True"   Grid.Row="0"  Name="lsPricture" ItemTemplate="{StaticResource ItemTemplate}"
+                                <ListBox Grid.IsSharedSizeScope="True"   Grid.Row="0"  Name="lsPricture" ItemTemplate="{StaticResource ImageItemTemplate}"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" SnapsToDevicePixels="True">
                                     <ListBox.ItemsPanel>
                                         <ItemsPanelTemplate>

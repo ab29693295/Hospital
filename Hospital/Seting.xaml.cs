@@ -377,12 +377,16 @@ namespace Hospital
         private void Malv_com_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            MainWindow._mainWindow._Malv = this.Malv_com.Text.ToString(); 
+            string malv = this.Malv_com.SelectedValue.ToString();
+
+            MainWindow._mainWindow._Malv = malv; 
         }
 
         private void Fen_com_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            MainWindow._mainWindow._DefultFen = this.Fen_com.Text.ToString();
+
+            string fen = this.Fen_com.SelectedValue.ToString();
+            MainWindow._mainWindow._DefultFen = fen;
         }
     }
 }

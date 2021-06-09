@@ -943,7 +943,7 @@ namespace Hospital
                 if (IsRecording == 0)
                 {
                     #region 开始录像
-                    if (m_hCapDev != 0)
+                    if (m_hCapDev !=0)
                     {
                         if (!string.IsNullOrEmpty(_Malv))
                         {
@@ -1388,20 +1388,20 @@ namespace Hospital
         /// <param name="e"></param>
         public void TurnBtn_Click(object sender, RoutedEventArgs e)
         {
-            EXPORTS.QCAP_SET_VIDEO_MIRROR(m_hCapDev, 1,0);
+            //EXPORTS.QCAP_SET_VIDEO_MIRROR(m_hCapDev, 1,0);
             if (_IsFanzhuan)
             {
                 //EXPORTS.QCAP_SET_VIDEO_MIRROR(m_hCapDev, 1, 1);
-              
-                //EXPORTS.QCAP_SET_DEVICE_CUSTOM_PROPERTY(m_hCapDev, 245, 0);
-                //EXPORTS.QCAP_SET_DEVICE_CUSTOM_PROPERTY(m_hCapDev, 244, 0);
+
+                EXPORTS.QCAP_SET_DEVICE_CUSTOM_PROPERTY(m_hCapDev, 245, 0);
+                EXPORTS.QCAP_SET_DEVICE_CUSTOM_PROPERTY(m_hCapDev, 244, 0);
                 _IsFanzhuan = false;
             }
             else
             {
                 // EXPORTS.QCAP_SET_VIDEO_MIRROR(m_hCapDev, 0, 0);
-                //EXPORTS.QCAP_SET_DEVICE_CUSTOM_PROPERTY(m_hCapDev, 245, 1);
-                //EXPORTS.QCAP_SET_DEVICE_CUSTOM_PROPERTY(m_hCapDev, 244, 1);
+                EXPORTS.QCAP_SET_DEVICE_CUSTOM_PROPERTY(m_hCapDev, 245, 1);
+                EXPORTS.QCAP_SET_DEVICE_CUSTOM_PROPERTY(m_hCapDev, 244, 1);
 
                 _IsFanzhuan = true;
             }

@@ -1459,6 +1459,33 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <DataTemplate x:Key="ImageItemTemplate">
+            <Grid  Width="185" Height="185" Margin="10,0,0,0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="SingleWidthColumn" ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.Style>
+                    <Style>
+                        <Setter Property="TextBlock.Foreground" Value="Transparent"></Setter>
+                    </Style>
+                </Grid.Style>
+                <Border Margin="2" BorderThickness="0" BorderBrush="SteelBlue" CornerRadius="3">
+                    <Grid   Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="145"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0"  Source="{Binding Path=imagePath}" Margin="1"  ></Image>
+                        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal"  VerticalAlignment="Center"  >
+                            <CheckBox VerticalAlignment="Center"  IsChecked="{Binding IsSelected}"  Tag="{Binding Path=ID}"></CheckBox>
+                            <Label VerticalAlignment="Center" Content="{Binding Path=name}" ></Label>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Grid>
+        </DataTemplate>
+
         <!--行样式触发-->
         <DataTemplate x:Key="ItemTemplate">
             <Grid  Width="185" Height="185" Margin="10,0,0,0" >

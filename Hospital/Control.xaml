@@ -19,9 +19,9 @@
                 <Button x:Name="stopBtn"  Width="90" Height="90" Template="{StaticResource FullPauseRecord}" Click="StopBtn_Click" Margin="25,0,0,0"  />
                 <Button x:Name="CameraBtn"  Width="90" Height="90"  Template="{StaticResource FullCameraBtn}" Click="CameraBtn_Click" Margin="25,0,0,-0.2"  VerticalAlignment="Top" />
                 <Button x:Name="turnBtn"  Width="90" Height="90"  Template="{StaticResource FullTurnBtn}" Click="TurnBtn_Click" Margin="25,0,0,0" />
-                <Button x:Name="ChangeVideoBtn" Click="ChangeVideoBtn_Click"   Width="90" Height="90"  Template="{StaticResource FullVideoBtn}" Margin="25,0,0,0" />
+                <!--<Button x:Name="ChangeVideoBtn" Click="ChangeVideoBtn_Click"   Width="90" Height="90"  Template="{StaticResource FullVideoBtn}" Margin="25,0,0,0" />-->
 
-                <Button x:Name="forwardBtn"  Width="90" Height="90"  Template="{StaticResource SmallScreenBtn}" Margin="50,0,0,0" RenderTransformOrigin="2.159,0.505" Click="ForwardBtn_Click"   />
+                <Button x:Name="forwardBtn"  Width="90" Height="90"  Template="{StaticResource SmallScreenBtn}" Margin="75,0,0,0" RenderTransformOrigin="2.159,0.505" Click="ForwardBtn_Click"   />
                 
                 
             </StackPanel>

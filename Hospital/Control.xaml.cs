@@ -109,15 +109,15 @@ namespace Hospital
 
         private void ChangeVideoBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow._mainWindow.ChangeVideoBtn_Click(sender, e);
-            string DefultVideo = XmlHelper.GetValue("CurrentVideoInput");
-            if (DefultVideo == "0")
-            {
-                Control._Control.ChangeVideoBtn.Template = this.FindResource("FullSecondVideoBtn") as ControlTemplate;
-            }
-            else {
-                Control._Control.ChangeVideoBtn.Template = this.FindResource("FullVideoBtn") as ControlTemplate;
-            }
+            //MainWindow._mainWindow.ChangeVideoBtn_Click(sender, e);
+            //string DefultVideo = XmlHelper.GetValue("CurrentVideoInput");
+            //if (DefultVideo == "0")
+            //{
+            //    Control._Control.ChangeVideoBtn.Template = this.FindResource("FullSecondVideoBtn") as ControlTemplate;
+            //}
+            //else {
+            //    Control._Control.ChangeVideoBtn.Template = this.FindResource("FullVideoBtn") as ControlTemplate;
+            //}
         }
     }
 }
